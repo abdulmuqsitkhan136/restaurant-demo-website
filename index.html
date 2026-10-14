@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember &amp; Oak | Fire-Led Modern Dining (Demo)</title>
+<meta name="description" content="Ember & Oak is a fictional fine-dining restaurant concept: wood-fired grill, handmade pasta and seasonal desserts. Website demo.">
+<meta name="theme-color" content="#101010">
+<meta property="og:title" content="Ember & Oak | An Experience Worth Savoring">
+<meta property="og:description" content="A premium restaurant website concept built with plain HTML, CSS and JavaScript.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=70">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23101010'/%3E%3Ctext x='50' y='66' font-size='56' text-anchor='middle' fill='%23C6A66B' font-family='serif'%3E&amp;%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="header" id="header">
+  <a class="logo" href="#home" aria-label="Ember &amp; Oak, home">Ember <i>&amp;</i> Oak</a>
+  <nav class="nav" id="nav" aria-label="Main">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-gold nav-cta" href="#reserve">Reserve a Table</a>
+  </nav>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span></button>
+</header>
+
+<main id="main">
+<section class="hero" id="home">
+  <div class="hero-img" data-img="hero" role="img" aria-label="Fire-grilled ribeye steak resting on a dark board"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-copy">
+    <p class="eyebrow">A modern dining experience</p>
+    <h1><span class="line"><span>Great Food.</span></span><span class="line"><span>Unforgettable</span></span><span class="line"><span><em>Moments.</em></span></span></h1>
+    <p class="lead">Live-fire cooking, handmade pasta and a cellar built for long evenings. Come hungry.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="#menu">Explore Our Menu</a>
+      <a class="btn btn-ghost" href="#reserve">Reserve a Table</a>
+    </div>
+  </div>
+  <p class="hero-meta">Open today · 5:00 pm – 11:00 pm</p>
+  <a class="scroll" href="#story" aria-label="Scroll to our story"><span></span></a>
+</section>
+
+<section class="section" id="signature">
+  <div class="wrap">
+    <header class="head reveal"><p class="eyebrow">Signature dishes</p><h2>Cooked over fire,<br>finished with care.</h2></header>
+    <div class="sig-grid" id="sigGrid"></div>
+    <p class="center reveal"><a class="btn btn-ghost" href="#menu">View Full Menu</a></p>
+  </div>
+</section>
+
+<section class="section story" id="story">
+  <span class="story-amp" aria-hidden="true">&amp;</span>
+  <div class="wrap story-grid">
+    <div class="story-imgs reveal">
+      <div class="arch"><img data-img="story1" alt="Chef plating a dish at the pass" width="800" height="1000" loading="lazy"></div>
+      <div class="arch-sm"><img data-img="story2" alt="Warmly lit dining room with oak tables" width="600" height="800" loading="lazy"></div>
+    </div>
+    <div class="story-copy reveal">
+      <p class="eyebrow">Our story</p>
+      <h2>One oak fire.<br>One simple promise.</h2>
+      <p class="story-lead">Ember &amp; Oak began with a single wood-burning hearth and a belief that the best meals are unhurried.</p>
+      <p>We cook with local farms, season with patience, and let the flame do the talking. Every table is a small occasion, whether it is a quiet anniversary or a loud Friday. We want you to leave a little slower than you arrived.</p>
+      <ul class="pillars">
+        <li><strong>Oak fire</strong><span>Every dish starts at the hearth.</span></li>
+        <li><strong>Local farms</strong><span>Growers we know by name.</span></li>
+        <li><strong>No rush</strong><span>Stay for one more course.</span></li>
+      </ul>
+      <a class="link" href="#experience">See the tasting menu</a>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="menu">
+  <div class="wrap">
+    <header class="head reveal"><p class="eyebrow">The menu</p><h2>Something for every appetite.</h2></header>
+    <div class="menu-tools">
+      <div class="tabs" id="tabs" role="group" aria-label="Menu categories"></div>
+      <label class="search"><span class="sr">Search dishes by name</span><input type="search" id="search" placeholder="Search dishes…" autocomplete="off"></label>
+    </div>
+    <p class="sr" id="menuStatus" aria-live="polite"></p>
+    <div class="menu-grid" id="menuGrid"></div>
+    <p class="empty" id="empty" hidden>No dishes match your search. Try another name or choose All.</p>
+  </div>
+</section>
+
+<section class="exp" id="experience">
+  <div class="exp-img" data-img="exp" role="img" aria-label="Multi-course tasting plates arranged on a dark table"></div>
+  <div class="exp-copy reveal">
+    <p class="eyebrow">Chef's table</p>
+    <h2>The Ember Tasting Menu</h2>
+    <p>Five courses cooked at the hearth, with a short talk from the chef between each. Available Thursday to Saturday, limited to twelve guests.</p>
+    <p class="price">$95 <small>per guest · wine pairing +$55</small></p>
+    <a class="btn btn-gold" href="#menu">Explore the Menu</a>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="wrap">
+    <header class="head reveal"><p class="eyebrow">Gallery</p><h2>A look inside.</h2></header>
+    <div class="gal" id="gal"></div>
+  </div>
+</section>
+
+<section class="section alt" id="reviews">
+  <div class="wrap">
+    <header class="head reveal"><p class="eyebrow">Kind words</p><h2>What guests might say.</h2></header>
+    <div class="rev-grid">
+      <blockquote class="rev reveal"><p>The ribeye alone is worth the trip. Smoky, tender, perfectly rested.</p><footer>Sample guest, A.</footer></blockquote>
+      <blockquote class="rev reveal"><p>Service felt like being hosted by friends who happen to be experts.</p><footer>Sample guest, M.</footer></blockquote>
+      <blockquote class="rev reveal"><p>That chocolate fondant. I'm still thinking about it a week later.</p><footer>Sample guest, R.</footer></blockquote>
+    </div>
+    <p class="note center">Fictional sample testimonials for this demo. Replace with genuine, verified reviews before launch.</p>
+  </div>
+</section>
+
+<section class="section" id="reserve">
+  <div class="wrap narrow">
+    <header class="head reveal"><p class="eyebrow">Reservations</p><h2>Reserve a table.</h2><p class="muted">This is a demo form. Nothing is sent or booked.</p></header>
+    <form class="form reveal" id="resForm" novalidate>
+      <div class="f"><label for="rName">Full name</label><input id="rName" name="name" required autocomplete="name"><small class="err"></small></div>
+      <div class="f"><label for="rEmail">Email</label><input id="rEmail" type="email" name="email" required autocomplete="email"><small class="err"></small></div>
+      <div class="f"><label for="rPhone">Phone</label><input id="rPhone" type="tel" name="phone" required pattern="[0-9+()\-\s]{7,}" autocomplete="tel"><small class="err"></small></div>
+      <div class="f"><label for="rGuests">Guests</label><select id="rGuests" name="guests" required></select><small class="err"></small></div>
+      <div class="f"><label for="rDate">Date</label><input id="rDate" type="date" name="date" required><small class="err"></small></div>
+      <div class="f"><label for="rTime">Time</label><select id="rTime" name="time" required></select><small class="err"></small></div>
+      <div class="f full"><label for="rNote">Special request (optional)</label><textarea id="rNote" name="note" rows="3"></textarea></div>
+      <div class="full"><button class="btn btn-gold" type="submit">Submit Reservation</button></div>
+    </form>
+    <div class="confirm" id="resOk" role="status" hidden><h3>Demo request received</h3><p id="resMsg"></p><p class="muted">This is a demonstration website. No reservation has been made and no message was sent.</p><button class="btn btn-ghost" type="button" data-reset="resOk">Make another request</button></div>
+  </div>
+</section>
+
+<section class="section alt" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <p class="eyebrow">Find us</p><h2>Visit Ember &amp; Oak.</h2>
+      <dl class="info">
+        <dt>Address</dt><dd id="cAddr"></dd>
+        <dt>Phone</dt><dd><a id="cPhone" href="#contact"></a></dd>
+        <dt>Email</dt><dd><a id="cMail" href="#contact"></a></dd>
+        <dt>Hours</dt><dd id="cHours"></dd>
+      </dl>
+      <p><a class="btn btn-ghost" id="dir" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Sample%20Street%20Karachi">Get Directions</a></p>
+      <ul class="social" id="social"></ul>
+    </div>
+    <div class="reveal">
+      <form class="form one" id="conForm" novalidate>
+        <div class="f"><label for="cName">Name</label><input id="cName" required autocomplete="name"><small class="err"></small></div>
+        <div class="f"><label for="cEmail">Email</label><input id="cEmail" type="email" required autocomplete="email"><small class="err"></small></div>
+        <div class="f"><label for="cMsg">Message</label><textarea id="cMsg" rows="4" required minlength="10"></textarea><small class="err"></small></div>
+        <button class="btn btn-gold" type="submit">Send Message</button>
+      </form>
+      <div class="confirm" id="conOk" role="status" hidden><h3>Demo message captured</h3><p>Thanks. This is a demo, so your message has not been sent anywhere.</p><button class="btn btn-ghost" type="button" data-reset="conOk">Write another</button></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap foot-grid">
+    <div><a class="logo" href="#home">Ember <i>&amp;</i> Oak</a><p class="muted">Live-fire cooking and long evenings. A fictional restaurant concept.</p></div>
+    <nav aria-label="Footer"><h3>Explore</h3><ul><li><a href="#story">Our Story</a></li><li><a href="#menu">Menu</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#reserve">Reserve</a></li></ul></nav>
+    <div><h3>Visit</h3><p class="muted" id="fAddr"></p><p class="muted" id="fHours"></p></div>
+    <div><h3>Follow</h3><ul class="social" id="fSocial"></ul></div>
+  </div>
+  <p class="copy">© <span id="year"></span> Ember &amp; Oak. Demo website, not a real business.</p>
+  <a class="top" id="top" href="#home" aria-label="Back to top">↑</a>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+  <button class="lb-x" id="lbClose" aria-label="Close">×</button>
+  <button class="lb-n prev" id="lbPrev" aria-label="Previous image">‹</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb-n next" id="lbNext" aria-label="Next image">›</button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
